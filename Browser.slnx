@@ -6,5 +6,6 @@
   <Project Path="Browser/Browser.vcxproj">
     <BuildDependency Project="Worker/Worker.vcxproj" />
   </Project>
+  <Project Path="BrowserTests/BrowserTests.vcxproj" />
   <Project Path="Worker/Worker.vcxproj" />
 </Solution>

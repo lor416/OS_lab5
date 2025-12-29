@@ -1,11 +1,10 @@
 #include <iostream>
-#include <cmath>
 #include <string>
 #include "Common.h"
+#include "MathUtils.h"
 
 int main(int argc, char* argv[])
 {
-    const double PI = 3.14;
     if (argc < 2) return 1;
     int id = std::stoi(argv[1]);
 
@@ -24,24 +23,10 @@ int main(int argc, char* argv[])
 
         if (!ReadFile(hPipeIn, &task, sizeof(Task), &read, NULL) || read == 0) break;
         if (task.type == TASK_EXIT) break;
+        Result res = CalculateDFT(task);
 
-        // Преобразование Фурье
-        Result res;
-        res.size = task.size;
-        for (int k = 0; k < res.size; ++k)
-        {
-            res.real[k] = 0;
-            res.imag[k] = 0;
-            for (int n = 0; n < res.size; ++n)
-            {
-                double angle = 2 * PI * k * n / res.size;
-                res.real[k] += task.data[n] * cos(angle);
-                res.imag[k] -= task.data[n] * sin(angle);
-            }
-        }
         std::cout << "[Worker " << id << "] Processing task..." << std::endl;
-        Sleep(1000); 
-
+        Sleep(1000);
         WriteFile(hPipeOut, &res, sizeof(Result), &written, NULL);
     }
 
