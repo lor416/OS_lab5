@@ -1,41 +1,27 @@
-# Prerequisites
-*.d
+# Visual Studio временные файлы
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.user
+*.aps
+*.2019.sz
+*.suo
+*.db
+*.opendb
+*.VC.db
+*.VC.opendb
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Файлы VS Code (удаляем из отслеживания)
+.vscode/
+.history/
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+# Скомпилированные файлы
 *.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+*.pdb
+*.obj
+*.ilk
+*.log
+*.tlog
+*.lastbuildstate

@@ -1,0 +1,10 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Browser/Browser.vcxproj">
+    <BuildDependency Project="Worker/Worker.vcxproj" />
+  </Project>
+  <Project Path="Worker/Worker.vcxproj" />
+</Solution>
